@@ -1,0 +1,64 @@
+.fullclick {
+    margin: 1em 0;
+    padding: 0;
+    max-width: 30em;
+}
+
+.fullclick li {
+    list-style: none;
+    margin: 1em 0;
+    padding: 20px 10px;
+    background: #51b3ec;
+    position: relative;
+    transition: 400ms;
+}
+
+.fullclick p a {
+    color: lime;
+    z-index: 2;
+    position: relative;
+}
+
+.fullclick a.main {
+    color: #85baff;
+    text-align: right;
+    display: block;
+    z-index: 1;
+}
+
+.fullclick li a.main::after {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    content: ' ';
+}
+
+.fullclick:hover a.main,
+.fullclick:focus-within a.main {
+    color: #cfe4ff;
+}
+
+.fullclick li button {
+    z-index: 2;
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    opacity: 0;
+    transition: 400ms;
+    border: none;
+    color: #fff;
+    background: #333;
+}
+
+.fullclick li:hover button,
+.fullclick li:focus-within button {
+    opacity: 1;
+}
+
+.fullclick li:hover,
+.fullclick li:focus-within {
+    background: #69bbeb;
+    box-shadow: 0px 3px 6px #000;
+}
