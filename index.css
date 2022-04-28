@@ -26,6 +26,16 @@ body {
     border-radius: 5px;
 }
 
+#type {
+    border: 1px solid #95a5a6;
+    display: block;
+    margin: 20px auto;
+    padding: 15px 10px;
+    width: 250px;
+    background-color: #ecf0f1;
+    border-radius: 5px;
+}
+
 .loginBox .loginButton{
     border: 3px solid #eb4d4b;
     display: block;
