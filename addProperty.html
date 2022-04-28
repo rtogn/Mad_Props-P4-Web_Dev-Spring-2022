@@ -9,19 +9,22 @@
 
 <body>
 	<div>
-		<form action="addArtToDB.php" method="post">
+		<form action="addProp.php" method="post">
 			<h3>New Property</h3>
-			<p>Name: <input name="propname" type="text"></p>
-            <p>Location: <input name="propname" type="text"></p>
-            <p>Age: <input name="propname" type="text"></p>
-            <p>Number of Bedrooms: <input name="propname" type="text"></p>
-            <p>Additional Facilities: <input name="propname" type="text"></p>
-            <p>Garden: <input name="propname" type="text"></p>
-            <p>Parking: <input name="propname" type="text"></p>
-            <p>Property tax records: <input name="propname" type="text"></p>
+			<p>Location: <input name="propname" type="text"></p>
+			<p>Construction Date: <input name="date" type="text"></p>
+			<p>Square Footage: <input name="size" type="text"></p>
+			<p>Number of Bedrooms: <input name="bedrooms" type="text"></p>
+			<p>Number of Bathrooms: <input name="bathrooms" type="text"></p>
+			<p>Additional Facilities: <input name="additions" type="text"></p>
+			<p>Garden: <input name="garden" type="text"></p>
+			<p>Parking: <input name="parking" type="text"></p>
+			<p>Stuff in Close Proximity: <input name="stuffProximity" type="text"></p>
+			<p>Road in Close Proximity: <input name="roadProximity" type="text"></p>
+			<p>Value: <input name="value" type="text"></p>
 			<input type="submit" id="btn3" value="Submit">
 			<!-- Redirect how would you handle user cancel -->
-			<a href="seller.html"><input type="button" id="btn1"  value="Cancel"></a>
+			<a href="seller.html"><input type="button" id="btn1" value="Cancel"></a>
 		</form>
 	</div>
 </body>
