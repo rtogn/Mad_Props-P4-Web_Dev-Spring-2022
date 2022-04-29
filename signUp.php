@@ -16,7 +16,9 @@ if (isset($_POST['firstName']) && strlen($_POST['firstName']) > 0)   // it check
 		addUser($conn);
 	} else {
 		echo "Could not establish connectoin to SQL server";
-	}	
+	}
+	$conn->close();
+	session_destroy();
 }
 
 /*
@@ -41,7 +43,7 @@ if (isset($_SESSION['user'])) {
     </head> 
     
     <body>
-        <form class="loginBox" action="<?php echo $_SERVER['PHP_SELF'];?>" method="post">
+        <form class="loginBox" action="" method="post">
             <div class="houseLogo">
                 <img src="./images/houseLogo.png">
             </div>

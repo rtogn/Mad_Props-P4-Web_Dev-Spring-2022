@@ -6,9 +6,9 @@ var type = document.getElementById("type");
 type.addEventListener('change', function() {
 		if(type.value == "seller" || type.value == "admin") {
 			document.getElementById("creditInfo").style.display = "none";
-			document.getElementById("creditcard").removeAttr('required');
-			document.getElementById("creditType").removeAttr('required');
-			document.getElementById("securityCode").removeAttr('required');
+			document.getElementById("creditcard").removeAttribute('required');
+			document.getElementById("creditType").removeAttribute('required');
+			document.getElementById("securityCode").removeAttribute('required');
 		}
 		if (type.value == "buyer") {
 			document.getElementById("creditInfo").style.display = "block";

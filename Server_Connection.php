@@ -7,6 +7,7 @@ function test() {
 }
 
 function getConn() {
+	// Return conn object based on login info below. 
 	$host = "localhost";
 	$user = "rtognoni1";
 	$pass = "rtognoni1";
@@ -24,25 +25,40 @@ function getConn() {
 		return $conn;
 	}
 }
-//, userName, userType, password, creditCard=null, creditType=null, creditSecurity=null
-function addUser($conn) {
 
-	// If user is a buyer they have credit info. Otherwise they do not. 
+function addUser($conn) {
+	// take conn argument to set up user based on querey. Buyers get cc info, others do not. 
 	if($_POST['type'] == "buyer") {
-		$usrEntry = "INSERT INTO USERS (username, usrType, password, firstName, LastName, email, creditCard, creditType, creditSecurity)
-					values('".$_POST['username']."','".$_POST['type'].".','".$_POST['password']."',".$_POST['firstName']."',".$_POST['lastName']."',".$_POST['email']."',".$_POST['creditcard'].",'".$_POST['creditType']."','".$_POST['securityCode']."')";
+
+		$usrEntry = "INSERT INTO USERS (username, usrType, password, firstName, lastName, email, creditCard, creditType, creditSecurity)
+					values('"
+					.$_POST['username']."', '"
+					.$_POST['type'].".', '"
+					.$_POST['password']."', '"
+					.$_POST['firstName']."', '"
+					.$_POST['lastName']."', '"
+					.$_POST['email']."', '"
+					.$_POST['creditcard']."', '"
+					.$_POST['creditType']."', '"
+					.$_POST['securityCode']."');";
+					
 	} else {
-		$usrEntry = "INSERT INTO USERS (username, usrType, password, firstName, LastName, email)
-					values('".$_POST['username']."','".$_POST['type'].".','".$_POST['password']."',".$_POST['firstName']."',".$_POST['lastName']."',".$_POST['email']."')";
-	
-	
+		$usrEntry = "INSERT INTO USERS (username, usrType, password, firstName, lastName, email)
+					values('"
+					.$_POST['username']."', '"
+					.$_POST['type'].".', '"
+					.$_POST['password']."', '"
+					.$_POST['firstName']."', '"
+					.$_POST['lastName']."', '"
+					.$_POST['email']."');";
 	}
+	
 	
 	$_SESSION['user'] = $_POST['username'];
 	if($conn->query($usrEntry) === TRUE) {
 		echo "row created!";
 	} else {
-		"Error with creating table: " . $conn->error;
+		echo "Error with creating table: " . $conn->error;
 	}
 }
 
