@@ -5,7 +5,7 @@
     </head>
     <body>
         <?php
-        //Form verification, needs Location, sqr fottage, and value
+        //Form verification, needs Location, sqr foottage, and value
         $servername = "localhost";
         $username = "bkrokoff1";
         $password = "bkrokoff1";
