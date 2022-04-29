@@ -64,4 +64,57 @@ function addUser($conn) {
 	}
 }
 
+
+function verifyUser($username, $password) {
+	// Use SQL query to verify username and password.
+	// Returns id, uname, password and user type
+	
+	$conn = getConn();
+	// Query is pretty standard but the username and password are compared
+	// in the WHERE clause to avoid any bafoonary in PHP. 
+	// Note that username is UNIQUE so will only give 1 row. 
+	$sqlQ1 = "
+			SELECT
+				id,
+				username,
+				usrType,
+				password
+			FROM
+				USERS
+			WHERE
+				username = '".$username."' 
+				AND password = '".$password."'
+			;";
+	//$sqlQ2 = "SELECT * FROM USERS"; //test query 
+	
+	// Get the Q results
+	$result = $conn->query($sqlQ1);
+	
+	// Get row into a parsable format. Due to the way the table is designed there will only be one row
+	// This is because username is set to unique. 
+	$row = $result->fetch_array();
+	$_SESSION['userId'] = $row['id'];
+	$_SESSION['username'] = $row['username'];
+	$_SESSION['usrType'] = $row['usrType'];
+	
+	if(isset($_SESSION['userId'])) {
+		echo "User found!";
+		selectDashboard($_SESSION['usrType']);
+	} else {
+		echo "User not found!";
+	}
+	
+}
+
+function selectDashboard($userType) {
+	if ($userType == "Admin") {
+		header("Location: admin.php"); 
+	}
+	else if ($userType == "seller") {
+		header("Location: seller.php"); 
+	}
+	else {
+		header("Location: buyer.php"); 		
+	}
+}
 ?>
