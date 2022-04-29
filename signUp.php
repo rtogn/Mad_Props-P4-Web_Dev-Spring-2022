@@ -37,13 +37,13 @@ if (isset($_SESSION['user'])) {
 <html> 
     <head meta charset="UTF-8"> 
         <title>Mad Props Sign Up</title>
-        <link href="./aindex.css" type="text/css" rel="stylesheet"/>
+        <link href="./index.css" type="text/css" rel="stylesheet"/>
     </head> 
     
     <body>
         <form class="loginBox" action="" method="post">
             <div class="houseLogo">
-                <img src="./aimages/houseLogo.png">
+                <img src="./images/houseLogo.png">
             </div>
             <h1 class="login"> Sign Up </h1>
 			
