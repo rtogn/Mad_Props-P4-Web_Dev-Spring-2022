@@ -16,9 +16,7 @@ if (isset($_POST['firstName']) && strlen($_POST['firstName']) > 0)   // it check
 		addUser($conn);
 	} else {
 		echo "Could not establish connectoin to SQL server";
-	}
-	$conn->close();
-	session_destroy();
+	}	
 }
 
 /*
@@ -39,13 +37,13 @@ if (isset($_SESSION['user'])) {
 <html> 
     <head meta charset="UTF-8"> 
         <title>Mad Props Sign Up</title>
-        <link href="./index.css" type="text/css" rel="stylesheet"/>
+        <link href="./aindex.css" type="text/css" rel="stylesheet"/>
     </head> 
     
     <body>
         <form class="loginBox" action="" method="post">
             <div class="houseLogo">
-                <img src="./images/houseLogo.png">
+                <img src="./aimages/houseLogo.png">
             </div>
             <h1 class="login"> Sign Up </h1>
 			
