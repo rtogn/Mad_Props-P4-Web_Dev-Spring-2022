@@ -45,19 +45,27 @@ if (isset($_SESSION['user'])) {
             <div class="houseLogo">
                 <img src="./images/houseLogo.png">
             </div>
-            <h1 class="login"> Sign Up </h1>
+            <h1 class="login"> Sign Up </h1>			
+	
 			
-			<label for="type">Select user type:</label>
-            <select id="type" name="type" class="option">
-				<option value="buyer">Buyer</option>
-				<option value="seller">seller</option>
-			</select>
-			
-			<input name="firstName" type="text" placeholder="First Name" required>
+	<input name="firstName" type="text" placeholder="First Name" required>
             <input name="lastName" type="text" placeholder="Last Name" required>
             <input name="email" type="text" placeholder="Email" required>
             <input name="username" type="text" placeholder="Username" required>
             <input name="password" type="password" placeholder="Password" required>
+		
+	    <div class="radios">
+                <input type="radio" name="radioOption" value="buyer" id="buyers" checked>
+                    <label for="buyers">
+                        Buyer
+                    </label>
+        
+                <input type="radio" name="radioOption" value="seller" id="sellers">
+                    <label for="sellers">
+                        Seller
+                    </label>
+            </div>
+		
 			<div id="creditInfo">
 				<input name="creditcard" type="text" placeholder="creditcard" id="creditcard" required>
 				<input name="creditType" type="text" placeholder="creditType" id="creditType" required>
