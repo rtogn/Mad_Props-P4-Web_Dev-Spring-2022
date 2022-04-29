@@ -86,3 +86,37 @@ img {
     display: block;
     margin: 20px auto;
 }
+
+.loginBox .radios {
+    border: 1px solid #95a5a6;
+    display: block;
+    margin: 20px auto;
+    padding: 5px 10px;
+    width: 228px;
+    background-color: #ecf0f1;
+    border-radius: 5px;
+}
+
+input[type="radio"] {
+    display: none;
+}    
+
+.radios label {
+    color: black;
+    border: 1px solid #95a5a6;
+    background-color: #ecf0f1;
+    border-radius: 5px;
+    padding-left: 38%;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    display: block;
+    margin: auto;
+    margin-bottom: 10px;
+    margin-top: 10px;
+}
+
+input[type="radio"]:checked + label{
+    border: 1px solid #4834d4; 
+    background-color: #686de0;
+    color: white;
+}
