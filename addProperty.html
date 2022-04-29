@@ -9,7 +9,7 @@
 
 <body>
 	<div>
-		<form action="addProp.php" method="post">
+		<form action="addProp.php" method="POST">
 			<h3>New Property</h3>
 			<p>Owner First Name: <input name="fname" type="text" maxlength="35"></p>
 			<p>Owner Last Name: <input name="lname" type="text" maxlength="35"></p>
@@ -22,10 +22,9 @@
 			<p>Construction Date: <input name="date" type="date"></p>
 			<p>Square Footage: <input name="size" type="number" max="4294967295"></p>
 			<p>Number of Bedrooms: <input name="bedrooms" type="number"></p>
-			<p>Number of Bathrooms: <input name="bathrooms" type="number"></p>
 			<p>Additional Facilities: <input name="additions" type="text" maxlength="50"></p>
 			<p>Garden: <input name="garden" type="checkbox" value="1"></p>
-			<p>Parking: <input name="parking" type="checkbox" value="0"></p>
+			<p>Parking: <input name="parking" type="checkbox" value="1"></p>
 			<p>Stuff in Close Proximity: <input name="stuffProximity" type="text" maxlength="50"></p>
 			<p>Road in Close Proximity: <input name="roadProximity" type="text" maxlength="50"></p>
 			<p>Value: <input name="value" type="number" step="0.01" min="0" max="999999999999999.9999"></p>
