@@ -58,6 +58,19 @@ if (isset($_SESSION['user'])) {
             <input name="email" type="text" placeholder="Email" required>
             <input name="username" type="text" placeholder="Username" required>
             <input name="password" type="password" placeholder="Password" required>
+		
+	    <div class="radios">
+                <input type="radio" name="radioOption" value="buyer" id="buyers" checked>
+                    <label for="buyers">
+                        Buyer
+                    </label>
+        
+                <input type="radio" name="radioOption" value="seller" id="sellers">
+                    <label for="sellers">
+                        Seller
+                    </label>
+            </div>
+		
 			<div id="creditInfo">
 				<input name="creditcard" type="text" placeholder="creditcard" id="creditcard" required>
 				<input name="creditType" type="text" placeholder="creditType" id="creditType" required>
