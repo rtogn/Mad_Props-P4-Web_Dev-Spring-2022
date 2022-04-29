@@ -54,9 +54,11 @@ function addUser($conn) {
 	}
 	
 	
-	$_SESSION['user'] = $_POST['username'];
+	$_SESSION['username'] = $_POST['username'];
+	
 	if($conn->query($usrEntry) === TRUE) {
 		echo "row created!";
+		header("Location: index.php"); 
 	} else {
 		echo "Error with creating table: " . $conn->error;
 	}

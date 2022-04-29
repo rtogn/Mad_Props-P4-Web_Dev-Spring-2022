@@ -7,9 +7,8 @@ include("Server_Connection.php");
 //start session
 session_start();
 
-if (isset($_POST['firstName']) && strlen($_POST['firstName']) > 0)   // it checks whether the user clicked login button or not 
-{
-	
+// Checks if user has clicked login button and makes sure something is entered. 
+if (isset($_POST['firstName']) && strlen($_POST['firstName']) > 0) {  
 	$conn = getConn();
 
 	if ($conn) {
@@ -55,12 +54,12 @@ if (isset($_SESSION['user'])) {
             <input name="password" type="password" placeholder="Password" required>
 		
 	    <div class="radios">
-                <input type="radio" name="radioOption" value="buyer" id="buyers" checked>
+                <input type="radio" name="type" value="buyer" id="buyers" checked>
                     <label for="buyers">
                         Buyer
                     </label>
         
-                <input type="radio" name="radioOption" value="seller" id="sellers">
+                <input type="radio" name="type" value="seller" id="sellers">
                     <label for="sellers">
                         Seller
                     </label>

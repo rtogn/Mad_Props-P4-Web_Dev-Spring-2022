@@ -40,6 +40,17 @@
 					print_r($row);
 					
 				}
+				echo "<br><br><br>";
+				
+				$userSqlQ2 = "SELECT * FROM PROPERTIES";
+				
+				$result2 = $conn->query($userSqlQ2);	
+				echo 'Rows in Properties: ';
+				while($row2 = $result2->fetch_assoc()) {
+					echo '<br>';
+					print_r($row2);
+					
+				}
 				
 			}
 			$conn->close();
