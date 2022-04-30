@@ -39,8 +39,7 @@ session_start();
    //  Run a loop and display the records on screen dynamically
    // lets say the above query returned 20 rows
    // Now display the table on screen with 20 records
- 
-    echo "</table>";
+
  }
     ?>
     <li>
