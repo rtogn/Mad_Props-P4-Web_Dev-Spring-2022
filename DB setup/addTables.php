@@ -45,7 +45,7 @@
 				ownerID INT(6) UNSIGNED NOT NULL,
 				ownerFName VARCHAR(35),
 				ownerLName VARCHAR(35),
-				title VARCHAR (25),
+				title VARCHAR (25) UNIQUE,
 				address1 VARCHAR(30),
 				address2 VARCHAR(30),
 				city VARCHAR(25),
@@ -59,8 +59,8 @@
 				addons VARCHAR(50),
 				nearby VARCHAR(50),
 				roadProximity VARCHAR(50),
-				value DECIMAL(19,4),
-				soldFor DECIMAL(19,4),
+				value DECIMAL(19,2),
+				soldFor DECIMAL(19,2),
 				buyerID INT(6) UNSIGNED					
 			);";
 			
@@ -81,7 +81,7 @@
 								value
 							  )
 							values(
-								'1',
+								'25',
 								'Cool House',
 								'123 One two lane',
 								'Atlanta',
@@ -96,11 +96,16 @@
 							  );";
 			
 			// Set the query variable here for what you want to do -Belogus
-			if($conn->query($testEntry) === TRUE) {
+			if($conn->query($propTable) === TRUE) {
 				echo "User table created!";
 			} else {
 				"Error with creating table: " . $conn->error;
 			}
+			if($conn->query($testEntry) === TRUE) {
+				echo "User table created!";
+			} else {
+				"Error with creating table: " . $conn->error;
+			}			
 		}
 		
 		$conn->close();
