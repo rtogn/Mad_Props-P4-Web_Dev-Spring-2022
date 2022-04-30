@@ -26,7 +26,7 @@
     if ($conn->connect_error) {
 		die("Connection failed: " . $conn->connect_error);
     }
-    
+   
     $sql = "SELECT 
 				title, 
 				address1, 
@@ -39,16 +39,22 @@
     $result = $conn->query($sql);
     if ($result->num_rows > 0) {
       // output data of each row
-		while($row = $result->fetch_assoc()) {
-			 echo "<li><p>" . $row["title"] . "</p><p>" . $row["address1"] . "</p><p>" . $row["value"] . "</p>";   	 
-			 echo "<a href=\"property.php\" class=\"main\"></a>";
-		}
-	   //  Run a loop and display the records on screen dynamically
-	   // lets say the above query returned 20 rows
-	   // Now display the table on screen with 20 records
-	 
-		echo "</table>";
-	}
+    while($row = $result->fetch_assoc()) {
+     echo "<li><p>" . $row["title"] . "</p><p>" . $row["address1"] . "</p><p>" . $row["value"] . "</p>";
+     ?>
+    <form action="property.php" class="main">
+       <input type="text" name="propID" value=<?$row["id"]?> readonly>
+       <input type="submit" value="Go to property" class="main">
+    </form>
+     <?php
+     echo "</li>"
+    }
+   //  Run a loop and display the records on screen dynamically
+   // lets say the above query returned 20 rows
+   // Now display the table on screen with 20 records
+
+    }
+    $conn->close();
     ?>
     <li>
       <h2>New Property</h2>
