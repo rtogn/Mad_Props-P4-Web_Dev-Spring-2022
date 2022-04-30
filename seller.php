@@ -35,12 +35,13 @@ session_start();
      ?>
      <a href="property.php" class="main"></a>
      <?php
+     echo "</li>"
     }
    //  Run a loop and display the records on screen dynamically
    // lets say the above query returned 20 rows
    // Now display the table on screen with 20 records
 
- }
+    }
     ?>
     <li>
       <h2>New Property</h2>
