@@ -42,6 +42,7 @@ session_start();
    // Now display the table on screen with 20 records
 
     }
+    $conn->close();
     ?>
     <li>
       <h2>New Property</h2>
