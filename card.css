@@ -13,20 +13,20 @@
     transition: 400ms;
 }
 
-.fullclick p a {
+.fullclick p .main {
     color: lime;
     z-index: 2;
     position: relative;
 }
 
-.fullclick a.main {
+.fullclick .main {
     color: #85baff;
     text-align: right;
     display: block;
     z-index: 1;
 }
 
-.fullclick li a.main::after {
+.fullclick li .main::after {
     position: absolute;
     top: 0;
     left: 0;
@@ -35,8 +35,8 @@
     content: ' ';
 }
 
-.fullclick:hover a.main,
-.fullclick:focus-within a.main {
+.fullclick:hover .main,
+.fullclick:focus-within .main {
     color: #cfe4ff;
 }
 

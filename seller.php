@@ -25,7 +25,7 @@ session_start();
       die("Connection failed: " . $conn->connect_error);
     }
     
-    $sql = "SELECT title, address1, value FROM PROPERTIES WHERE ownerID '$_SESSION["id"]'";
+    $sql = "SELECT id, title, address1, value FROM PROPERTIES WHERE ownerID='$_SESSION["userId"]'";
     $result = $conn->query($sql);
 
     if ($result->num_rows > 0) {
@@ -33,7 +33,10 @@ session_start();
     while($row = $result->fetch_assoc()) {
      echo "<li><p>" . $row["title"] . "</p><p>" . $row["address1"] . "</p><p>" . $row["value"] . "</p>";
      ?>
-     <a href="property.php" class="main"></a>
+    <form action="property.php" class="main">
+       <input type="text" value='$row["id"]' readonly>
+       <input type="submit" value="Go to property" class="main">
+    </form>
      <?php
      echo "</li>"
     }
