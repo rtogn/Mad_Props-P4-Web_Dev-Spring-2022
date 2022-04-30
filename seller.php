@@ -34,7 +34,7 @@ session_start();
      echo "<li><p>" . $row["title"] . "</p><p>" . $row["address1"] . "</p><p>" . $row["value"] . "</p>";
      ?>
     <form action="property.php" class="main">
-       <input type="text" value='$row["id"]' readonly>
+       <input type="text" name="propID" value=<?$row["id"]?> readonly>
        <input type="submit" value="Go to property" class="main">
     </form>
      <?php
