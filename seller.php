@@ -26,7 +26,7 @@ session_start();
     }
     
     $sql = "SELECT title, address1, value FROM PROPERTIES WHERE ownerID '$_SESSION["id"]'";
-    $result = $con->query($sql);
+    $result = $conn->query($sql);
 
     if ($result->num_rows > 0) {
       // output data of each row
