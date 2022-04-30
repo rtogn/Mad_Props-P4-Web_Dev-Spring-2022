@@ -3,7 +3,7 @@ ini_set('display_errors', 1);
 ini_set('display_startup_errors', 1);
 error_reporting(E_ALL);
 
-include("Server_Connection.php");
+include("SQL_Functions.php");
 //start session
 session_start();
 

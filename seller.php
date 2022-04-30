@@ -19,7 +19,7 @@
 	error_reporting(E_ALL);
 	*/
 	
-	include("Server_Connection.php");
+	include("SQL_Functions.php");
 	$conn = getConn();
 
 	

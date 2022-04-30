@@ -1,7 +1,11 @@
 <!Doctype html>
-
+<?php
+	include('SQL_Functions.php');
+	if(isset($_POST['propname'])) {
+		echo addProperty();
+	}
+?>
 <html>
-
 <head lang="en">
 	<meta charset="UTF-8">
 	<title>New Property Form</title>
@@ -9,7 +13,7 @@
 
 <body>
 	<div>
-		<form action="addProp.php" method="POST">
+		<form action="" method="POST">
 			<h3>New Property</h3>
 			<p>Owner First Name: <input name="fname" type="text" maxlength="35"></p>
 			<p>Owner Last Name: <input name="lname" type="text" maxlength="35"></p>
@@ -30,7 +34,7 @@
 			<p>Value: <input name="value" type="number" step="0.01" min="0" max="999999999999999.9999"></p>
 			<input type="submit" id="btn3" value="Submit">
 			<!-- Redirect how would you handle user cancel -->
-			<a href="seller.html"><input type="button" id="btn1" value="Cancel"></a>
+			<a href="seller.php"><input type="button" id="btn1" value="Cancel"></a>
 		</form>
 	</div>
 </body>
