@@ -8,7 +8,7 @@
     list-style: none;
     margin: 1em 0;
     padding: 20px 10px;
-    background: #51b3ec;
+    
     position: relative;
     transition: 400ms;
 }
@@ -57,8 +57,31 @@
     opacity: 1;
 }
 
-.fullclick li:hover,
-.fullclick li:focus-within {
-    background: #69bbeb;
-    box-shadow: 0px 3px 6px #000;
+.card {
+    box-shadow: 0 4px 8px 0;
+    transition: 0.3s;
+    width: 40%;
+}
+
+.card:hover {
+    box-shadow: 0 8px 16px 0;
+    cursor: pointer;
+}
+
+.contain {
+    padding: 2px 16px;
+}
+
+img {
+    max-width: 100%;
+    max-height: 100%;
+}
+
+h4 {
+    text-align: center;
+}
+
+a {
+    text-decoration: none;
+    color: black;
 }
