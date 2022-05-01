@@ -4,7 +4,8 @@ session_start();
 
 			
 function SQLBitToYesNo($value) {
-		if ($value == 1) {
+	// Returns Yes Or No String based on bit value. 
+		if ($value == 1)
 			return "Yes";
 		return "No";	
 	}

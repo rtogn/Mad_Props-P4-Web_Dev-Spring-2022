@@ -42,7 +42,7 @@
 			// output data of each row
 			//  Run a loop and display the records on screen dynamically
 			// lets say the above query returned 20 rows
-			// Now display the table on screen with 20 records
+			// Now display the table on screen with 20 records 
 			while($row = $result->fetch_assoc()) {
 				echo "<li><p>" . $row["title"] . "</p><p>" . $row["address1"] . "</p><p>" . $row["value"] . "</p>\n";
 				echo "<form class=\"main\">\n";
