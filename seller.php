@@ -35,6 +35,7 @@
 				FROM PROPERTIES 
 				WHERE 
 				ownerID = '".$_SESSION['userId']."'
+				ORDER BY value DESC
 				;";
 				
 		$result = $conn->query($sql);
@@ -44,7 +45,8 @@
 			// lets say the above query returned 20 rows
 			// Now display the table on screen with 20 records 
 			while($row = $result->fetch_assoc()) {
-				echo "<li><p>" . $row["title"] . "</p><p>" . $row["address1"] . "</p><p>" . $row["value"] . "</p>\n";
+
+				echo "<li><p>" . $row["title"] . "</p><p>" . $row["address1"] . "</p><p>" . moneyFormat($row['value']). "</p>\n";
 				echo "<form class=\"main\">\n";
 				echo "</form>\n";
 				

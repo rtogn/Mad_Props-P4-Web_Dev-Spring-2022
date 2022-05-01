@@ -32,12 +32,13 @@
 				while($row = $result->fetch_assoc()) {
 					// Set custom display titles for each field in the property table. 
 					// Owner and address are made into single fields 
-					// Some fields use custom functions sotred in SQL_Functions to make the output user readable. 
+					// Some fields use custom functions sotred in SQL_Functions.php to make the output user readable. 
 					$owner = $row['ownerLName'].','. $row['ownerFName'];
 					$address = $row['address1'].' '.$row['address2'].' '.$row['city'].', '.$row['state'].' '.$row['zip'];
+
 					$propElements = array(
 										'Title' => $row['title'],
-										'Listing Price' => '$'.$row['value'],
+										'Listing Price' => moneyFormat($row['value']),
 										'Owner' => $owner,
 										'Address' => $address,
 										'Date Constructed' => $row['dateConstruct'],
