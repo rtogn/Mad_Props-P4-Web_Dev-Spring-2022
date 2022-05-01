@@ -7,12 +7,16 @@ function SQLBitToYesNo($value) {
 	// Returns Yes Or No String based on bit value. 
 		if ($value == 1)
 			return "Yes";
+<<<<<<< HEAD
 		return "No";	
 }
 
 function moneyFormat($value) {
 	//Convert SQL DECIMAL to formatted dollar value string with commas and decimal.
 	return '$'.number_format($value, 2);
+=======
+		return "No";
+>>>>>>> 44c0c4285a283356d6ba9f34bfab4635e70a60d9
 }
 
 function getConn() {
