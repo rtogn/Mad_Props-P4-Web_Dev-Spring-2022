@@ -1,39 +1,71 @@
 <!Doctype html>
 <html>
     <head>
-        <title>Property</title>
+        <title>Property Details</title>
     </head>
     <body>
-        <ul>
+		<h1>Property Details</h1>
         <?php
-            $servername = "localhost";
-            $username = "bkrokoff1";
-            $password = "bkrokoff1";
-            $dbname = "bkrokoff1";
-            $conn = new mysqli($servername, $username, $password, $dbname);
-        
-            if ($conn->connect_error) {
-              die("Connection failed: " . $conn->connect_error);
-            }
+			ini_set('display_errors', 1);
+			ini_set('display_startup_errors', 1);
+			error_reporting(E_ALL);
+			
+			$propId = -1;
+			if(isset($_GET['id'])) {
+				$propId = $_GET['id'];
+			}
+			
+			include("SQL_Functions.php");
+			$conn = getConn();
+    
             
-            $sql = "SELECT * FROM PROPERTIES WHERE id='$_POST["propID"]'";
-            $result = $conn->query($sql);
-            if ($result->num_rows > 0) {
-                // output data of each row
-              while($row = $result->fetch_assoc()) {
-               echo "<li><p>" . $row["title"] . "</p><p>" . $row["address1"] . "</p><p>" . $row["value"] . "</p>";
-               ?>
-               <a href="property.php" class="main"></a>
-               <?php
-               echo "</li>"
-              }
-             //  Run a loop and display the records on screen dynamically
-             // lets say the above query returned 20 rows
-             // Now display the table on screen with 20 records
-          
-            }
-            $conn->close();
-        ?>
-        </li>
+            $sql = "SELECT * FROM PROPERTIES WHERE id=$propId;";
+		
+			$result = $conn->query($sql);
+			if ($result->num_rows > 0) {
+				// output data of each row
+				//  Run a loop and display the records on screen dynamically
+				// lets say the above query returned 20 rows
+				// Now display the table on screen with 20 records
+					
+				$propElements = array();
+				while($row = $result->fetch_assoc()) {
+					// Set custom display titles for each field in the property table. 
+					// Owner and address are made into single fields
+					// Some fields use custom functions sotred in SQL_Functions to make the output user readable. 
+					$owner = $row['ownerLName'].','. $row['ownerFName'];
+					$address = $row['address1'].' '.$row['address2'].' '.$row['city'].', '.$row['state'].' '.$row['zip'];
+					$propElements = array(
+										'Title' => $row['title'],
+										'Listing Price' => '$'.$row['value'],
+										'Owner' => $owner,
+										'Address' => $address,
+										'Date Constructed' => $row['dateConstruct'],
+										'Square footage' => $row['sqrFt'],
+										'Bedrooms' => $row['bedrooms'],
+										// Since bit is 1 or 0 SQLBitToYesNo function makes it Yes Or No.
+										'Garden Available?' => SQLBitToYesNo($row['garden']), 
+										'Parking Available?' => SQLBitToYesNo($row['parking']),
+										'Addons' => $row['addons'],
+										'Nearby Interests' => $row['nearby'],
+										'Road Proximity' => $row['roadProximity']							
+										);		
+				}
+				
+				// Display each field with its specified title and DB value.
+				// /t and /n are used to make the html code display nicely.
+				echo "\t\t<ul>\n";
+				foreach($propElements as $header => $value) {
+					// Class for each listing is made to be first word of the title plust detail_ to
+					// avoid potential conflicts. Titles are written so each ID is clear to its function. 
+					$cssID = "details_".explode(" ", $header)[0];
+					echo "\t\t\t<li id='".$cssID."'>". $header . ":  ". $value ."</li>\n";
+				}				
+				echo "\t\t</ul>\n";		
+			}
+			$conn->close();
+
+		?>
+		<a href="seller.php"><input type="button" id="btn2" value="Return To Seller Dashboard"></a>
     </body>
 </html>

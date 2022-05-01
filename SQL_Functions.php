@@ -2,8 +2,12 @@
 <?php
 session_start();
 
-function test() {
-	return "cats";
+			
+function SQLBitToYesNo($value) {
+		if ($value == 1) {
+			return "Yes";
+		return "No";	
+	}
 }
 
 function getConn() {
@@ -202,5 +206,7 @@ function addProperty() {
 
 		$conn->close();
 	}
+	
+
 }
 ?>

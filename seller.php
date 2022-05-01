@@ -14,12 +14,11 @@
 
 		session_start();
 		
-		/*
+	
 		ini_set('display_errors', 1);
 		ini_set('display_startup_errors', 1);
 		error_reporting(E_ALL);
-		*/
-		
+			
 		include("SQL_Functions.php");
 		$conn = getConn();
 
@@ -29,6 +28,7 @@
 		}
 	   
 		$sql = "SELECT 
+					id,
 					title, 
 					address1, 
 					value
@@ -39,16 +39,20 @@
 				
 		$result = $conn->query($sql);
 		if ($result->num_rows > 0) {
-		  // output data of each row
+			// output data of each row
 			//  Run a loop and display the records on screen dynamically
 			// lets say the above query returned 20 rows
 			// Now display the table on screen with 20 records
 			while($row = $result->fetch_assoc()) {
-				echo "<li><p>" . $row["title"] . "</p><p>" . $row["address1"] . "</p><p>" . $row["value"] . "</p>";
-				echo "<form action=\"property.php\" class=\"main\">";
-				echo " <input type=\"submit\" value=\"Go to property\" class=\"main\">";
-				echo "</form>";
-				echo "</li>";
+				echo "<li><p>" . $row["title"] . "</p><p>" . $row["address1"] . "</p><p>" . $row["value"] . "</p>\n";
+				echo "<form class=\"main\">\n";
+				echo "</form>\n";
+				
+				echo "<a href=\"property.php?id=".$row['id']."\" class=\"main\"></a>\n";
+				
+				
+				echo "</li>\n";	
+				//echo "<button onclick=\"gotoPropPage(".$row['id'].")\">Beep</button>";				
 			}
 		}
 		$conn->close();
