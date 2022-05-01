@@ -7,16 +7,13 @@ function SQLBitToYesNo($value) {
 	// Returns Yes Or No String based on bit value. 
 		if ($value == 1)
 			return "Yes";
-<<<<<<< HEAD
 		return "No";	
 }
 
 function moneyFormat($value) {
 	//Convert SQL DECIMAL to formatted dollar value string with commas and decimal.
 	return '$'.number_format($value, 2);
-=======
-		return "No";
->>>>>>> 44c0c4285a283356d6ba9f34bfab4635e70a60d9
+
 }
 
 function getConn() {
@@ -47,7 +44,7 @@ function addUser() {
 		$usrEntry = "INSERT INTO USERS (username, usrType, password, firstName, lastName, email, creditCard, creditType, creditSecurity)
 					values('"
 					.$_POST['username']."', '"
-					.$_POST['type'].".', '"
+					.$_POST['type']."', '"
 					.$_POST['password']."', '"
 					.$_POST['firstName']."', '"
 					.$_POST['lastName']."', '"
@@ -60,7 +57,7 @@ function addUser() {
 		$usrEntry = "INSERT INTO USERS (username, usrType, password, firstName, lastName, email)
 					values('"
 					.$_POST['username']."', '"
-					.$_POST['type'].".', '"
+					.$_POST['type']."', '"
 					.$_POST['password']."', '"
 					.$_POST['firstName']."', '"
 					.$_POST['lastName']."', '"

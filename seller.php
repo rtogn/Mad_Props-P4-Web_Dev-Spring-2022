@@ -21,11 +21,6 @@
 			
 		include("SQL_Functions.php");
 		$conn = getConn();
-
-		
-		if ($conn->connect_error) {
-			die("Connection failed: " . $conn->connect_error);
-		}
 	   
 		$sql = "SELECT 
 					id,

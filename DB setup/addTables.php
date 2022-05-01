@@ -78,12 +78,14 @@
 								bedrooms,
 								garden,
 								parking,
-								value
+								value,
+								soldFor,
+								buyerID
 							  )
 							values(
 								'25',
-								'Cool House',
-								'123 One two lane',
+								'SoldForTest3',
+								'1234 One two lane',
 								'Atlanta',
 								'GA',
 								'30337',
@@ -92,7 +94,10 @@
 								'3',
 								'1',
 								'1',
-								'150000.00'
+								'150000.00',
+								'150000',
+								'5'
+								
 							  );";
 			
 			// Set the query variable here for what you want to do -Belogus
@@ -102,7 +107,7 @@
 				"Error with creating table: " . $conn->error;
 			}
 			if($conn->query($testEntry) === TRUE) {
-				echo "User table created!";
+				echo "User row created!";
 			} else {
 				"Error with creating table: " . $conn->error;
 			}			
