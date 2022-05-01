@@ -13,7 +13,7 @@
 
 <body>
 	<div>
-		<form action="" method="POST">
+		<form action="addProperty.php" method="POST">
 			<h3>New Property</h3>
 			<p>Owner First Name: <input name="fname" type="text" maxlength="35"></p>
 			<p>Owner Last Name: <input name="lname" type="text" maxlength="35"></p>
