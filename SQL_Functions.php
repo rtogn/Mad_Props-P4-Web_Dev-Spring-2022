@@ -7,8 +7,7 @@ function SQLBitToYesNo($value) {
 	// Returns Yes Or No String based on bit value. 
 		if ($value == 1)
 			return "Yes";
-		return "No";	
-	}
+		return "No";
 }
 
 function getConn() {
