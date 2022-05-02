@@ -1,5 +1,3 @@
-<script type="text/javascript" src="./buyer_function.js"></script>
-
 <?php
 	include_once('SQL_Functions.php');
 
