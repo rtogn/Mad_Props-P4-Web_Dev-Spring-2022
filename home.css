@@ -1,0 +1,108 @@
+.wrapper {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+    grid-auto-rows: minmax(100px, auto);
+}
+
+.right {
+    grid-column: 2 / 4;
+    grid-row: 1 / 5;
+    border: solid 1px white;
+    background-color: white;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+
+.left {
+    grid-column: 1;
+    grid-row: 1 / 5;
+    border: solid 1px white;
+    background-color: white;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+  
+body {
+    background-color: lightgray;
+    font-family: arial black;
+}
+
+.welcome {
+    text-align: center;
+}
+
+img {
+    display: block;
+    margin: auto;
+    padding-top: 10px;
+}
+
+.aboutUs {
+    padding-left: 20px;
+    color: #686de0;
+}
+
+h3 {
+    padding-left: 20px;
+}
+
+.paragraphs {
+    padding-left: 20px;
+    padding-right: 20px;
+    color: gray;
+}
+
+hr {
+    margin: 0px 20px 0px 20px;
+}
+
+.company {
+    color: #686de0;
+}
+
+.logOut{
+    border: 3px solid #4834d4;
+    display: block;
+    margin: 20px auto;
+    padding: 15px 10px;
+    width: 200px;
+    background-color: #686de0;
+    border-radius: 5px;
+    color: white;
+    font-family: arial;
+    font-weight: bold;
+    font-size: 12pt;
+    text-decoration: none;
+    text-align: center;
+}
+
+.buyerPage {
+    border: 3px solid #eb4d4b;
+    display: block;
+    margin: 20px auto;
+    padding: 15px 10px;
+    width: 200px;
+    background-color: #ff7979;
+    border-radius: 5px;
+    color: white;
+    font-family: arial;
+    font-weight: bold;
+    font-size: 12pt;
+    text-decoration: none;
+    text-align: center;
+}
+
+.sellerPage {
+    border: 3px solid #be2edd;
+    display: block;
+    margin: 20px auto;
+    padding: 15px 10px;
+    width: 200px;
+    background-color: #e056fd;
+    border-radius: 5px;
+    color: white;
+    font-family: arial;
+    font-weight: bold;
+    font-size: 12pt;
+    text-decoration: none;
+    text-align: center;
+}
