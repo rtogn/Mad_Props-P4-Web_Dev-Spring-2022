@@ -4,7 +4,7 @@
 <head>
   <meta charset="UTF-8">
   <title>Seller List</title>
-  <link rel="stylesheet" href="card.css">
+  <link rel="stylesheet" href="./card.css">
 </head>
 <body>
 
@@ -54,14 +54,17 @@
 		}
 		$conn->close();
     ?>
+
+<div class="card">
+	<img src="./images/AddProperty.jpg">
+	<div class="contain">
     <li>
-      <h2>New Property</h2>
-      <p>
-        Add Property
-      </p>
+      <h2>Add Property</h2>
       <a href="addProperty.php" class="main"></a>
       <button id="new">+</button>
     </li>
   </ul>
+	</div>
+	</div>
 </body>
 </html>
