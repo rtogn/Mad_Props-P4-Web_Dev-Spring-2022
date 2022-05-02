@@ -280,23 +280,23 @@
 			echo "\t\t\t<img src='./images/Houses/house10.jpeg'>\n";
 		}
 
-		if($counter == 10) {
+		if($counter == 11) {
 			echo "\t\t\t<img src='./images/Houses/house11.jpeg'>\n";
 		}
 
-		if($counter == 10) {
+		if($counter == 12) {
 			echo "\t\t\t<img src='./images/Houses/house12.jpeg'>\n";
 		}
 
-		if($counter == 10) {
+		if($counter == 13) {
 			echo "\t\t\t<img src='./images/Houses/house13.jpeg'>\n";
 		}
 
-		if($counter == 10) {
+		if($counter == 14) {
 			echo "\t\t\t<img src='./images/Houses/house14.jpeg'>\n";
 		}
 
-		if($counter == 10) {
+		if($counter == 15) {
 			echo "\t\t\t<img src='./images/Houses/house15.jpeg'>\n";
 		}
 	}
