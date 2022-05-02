@@ -18,9 +18,20 @@
   <link rel="stylesheet" href="card.css">
 </head>
 <body>
+	<?php
 
-  <h1>Properties to Buy</h1>	
-	
+		if ($_SESSION['newVisitor'] == 0) {
+			echo "\n\t<div class='welcome'>\n";
+			echo "\t\t<p>Welcome to Mad Props, new buyer!</p>\n";
+			echo "\t\t<p>Enter a search query to find houses near you!<p>\n";
+			echo "\t\t<p>Then select an interesting property to view the details and buy!</p>\n";
+			echo "\t</div>\n";
+			$_SESSION['newVisitor'] = 1;
+			setVisitorStatus();
+		}
+	?>
+	<h1>Properties to Buy</h1>	
+
 	<div class="searchBar">
 		<form action="" method="post">
 			<input name="search" type="text" placeholder="Type a zip code or city here">

@@ -3,17 +3,13 @@ ini_set('display_errors', 1);
 ini_set('display_startup_errors', 1);
 error_reporting(E_ALL);
 
-include("SQL_Functions.php");
+include_once("SQL_Functions.php");
 //start session
 session_start();
 
 // Checks if user has clicked login button and makes sure something is entered. 
 if (isset($_POST['firstName']) && strlen($_POST['firstName']) > 0) {  
-	if ($conn) {
-		addUser();
-	} else {
-		echo "Could not establish connectoin to SQL server";
-	}	
+	addUser();
 }
 
 /*
@@ -68,7 +64,8 @@ if (isset($_SESSION['user'])) {
 				<input name="creditType" type="text" placeholder="creditType" id="creditType" required>
 				<input name="securityCode" type="password" placeholder="securityCode" id="securityCode" required>
 			</div>
-		    <a href="index.html"><input type="submit" name="submit-btn" value="submit" class="signUpButton"></a>
+			<input type="submit" name="submit-btn" value="submit" class="signUpButton">
+		    <a href="index.html">Go back to index</a>
         </form>
 		<script src="signUp.js"></script>
     </body> 

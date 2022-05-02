@@ -94,3 +94,15 @@ a {
     text-decoration: none;
     color: black;
 }
+
+.welcome {
+	box-shadow: 0 4px 8px 0;
+    transition: 0.3s;
+	background-color: lightBlue;
+	padding: 25px;
+	font-weight: bold; 
+}
+
+.welcome:hover {
+    box-shadow: 0 8px 16px 0;
+}

@@ -84,4 +84,22 @@
 		$conn->close();
 	}
 	
+	function setVisitorStatus() {
+		// Sets new visitor status to 1 if they havent visited. 
+		$usrId = $_SESSION['userId'];
+		$conn = getConn();
+		$sql = "UPDATE USERS
+				SET
+					newVisitor = 1
+				WHERE
+					id = '$usrId'
+				;";
+				
+		echo $sql;
+		if (!$conn->query($sql) === TRUE) {
+			echo "Error: Failed to update database";
+		}
+		$conn->close();
+	}
+	
 ?>
