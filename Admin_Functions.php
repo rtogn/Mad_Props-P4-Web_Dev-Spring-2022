@@ -1,5 +1,5 @@
 <?php
-	include('SQL_Functions.php');
+	include_once('SQL_Functions.php');
 	
 	function displayQueryList($sql) {
 		// This function is maddness
@@ -17,36 +17,42 @@
 		$values = array();
 		// Get headers and print as tr row
 		
-		while($row = $result->fetch_assoc()) {
-			$colCount = sizeof($row);
-			foreach($row as $header=>$value) {
-				array_push($titles, $header);
-				array_push($values, $value);
-			}
-		}
-
-		// Titles ends up with copies of the headers for each 'row' of data
-		$titles = array_chunk($titles,$colCount)[0];
-		// Convert single dim data array to multi dimensional for each row we need
-		$values = array_chunk($values, $colCount);
-
-		// Print out headers once and close the tr
-		foreach($titles as $header) {
-			echo "\n\t\t<th id='admin_headerCol'>".$header."</th>";
-		}
-		echo "\n\t<tr>";
+		if ($result->num_rows > 0) {
+			while($row = $result->fetch_assoc()) {
+				$colCount = sizeof($row);
+				foreach($row as $header=>$value) {
+					array_push($titles, $header);
+					array_push($values, $value);
+				}
+			}	
 		
-		// Print out all the data per row. 
-		foreach($values as $row) {
-			echo "\n\t<tr id='admin_dataRow'>";
-			foreach($row as $item) {
-				echo "\n\t\t<td id='admin_dataRow'>".$item."</td>";
+
+			// Titles ends up with copies of the headers for each 'row' of data
+			$titles = array_chunk($titles,$colCount)[0];
+			// Convert single dim data array to multi dimensional for each row we need
+			$values = array_chunk($values, $colCount);
+
+			// Print out headers once and close the tr
+			foreach($titles as $header) {
+				echo "\n\t\t<th id='admin_headerCol'>".$header."</th>";
 			}
-			echo "\n\t</tr>";
-		}
+			echo "\n\t<tr>";
 			
-		// Close table. 
-		echo "\n</table>";
+			// Print out all the data per row. 
+			foreach($values as $row) {
+				echo "\n\t<tr id='admin_dataRow'>";
+				foreach($row as $item) {
+					echo "\n\t\t<td id='admin_dataRow'>".$item."</td>";
+				}
+				echo "\n\t</tr>";
+			}
+				
+			// Close table. 
+			echo "\n</table>";
+		}
+		else {
+			echo "None found";
+		}
 		$conn->close();
 	}
 			

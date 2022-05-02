@@ -1,6 +1,6 @@
 <!Doctype html>
 <?php
-	include('SQL_Functions.php');
+	include_once('SQL_Functions.php');
 	if(isset($_POST['propname'])) {
 		echo addProperty();
 	}

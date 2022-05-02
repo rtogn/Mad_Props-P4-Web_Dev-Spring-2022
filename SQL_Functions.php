@@ -3,7 +3,12 @@
 session_start();
 
 			
-
+function SQLBitToYesNo($value) {
+	// Returns Yes Or No String based on bit value. 
+		if ($value == 1)
+			return "Yes";
+		return "No";	
+}
 
 function moneyFormat($value) {
 	//Convert SQL DECIMAL to formatted dollar value string with commas and decimal.
@@ -141,8 +146,8 @@ function addProperty() {
 		$propname = $_POST["propname"];
 		$address1 = $_POST["address1"];
 		$address2 = $_POST["address2"];
-		$city = $_POST["city"];
-		$state = $_POST["state"];
+		$city = strtoupper($_POST["city"]); //Cities to Proper Case. 
+		$state = strtoupper($_POST["state"]);
 		$zip = $_POST["zip"];
 		$date = $_POST["date"];
 		$size = $_POST["size"];

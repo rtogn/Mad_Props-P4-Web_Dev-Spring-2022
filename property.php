@@ -15,7 +15,7 @@
 				$propId = $_GET['id'];
 			}
 			
-			include("SQL_Functions.php");
+			include_once("SQL_Functions.php");
 			$conn = getConn();
     
             

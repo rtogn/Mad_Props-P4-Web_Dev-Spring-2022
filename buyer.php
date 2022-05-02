@@ -4,11 +4,11 @@
 	ini_set('display_errors', 1);
 	ini_set('display_startup_errors', 1);
 	error_reporting(E_ALL);
-	include_once("SQL_Functions.php");
-	include_once("Buyer_Functions.php");
+	
 	//start session
 	session_start();
 	
+	include_once('Buyer_Functions.php');
  ?>
  
 <html lang="en">
@@ -38,9 +38,9 @@
     
 	<?php
 		if (isset($_POST["search"]) && strlen($_POST["search"]) > 0) {
-			//searchProperties($_POST["search"]);
+			searchProperties($_POST["search"]);
 		}
-		searchForZip("30338");
+		
 	?>
 	
 	
