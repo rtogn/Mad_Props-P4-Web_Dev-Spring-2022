@@ -1,3 +1,8 @@
+table {
+  margin-left: 20px;
+  margin-bottom: 10px;
+}
+
 table.adminTable {
   border: 1px solid #1C6EA4;
   background-color: #EEEEEE;
@@ -5,10 +10,6 @@ table.adminTable {
   text-align: left;
   border-collapse: collapse;
   
-}
-
-.tableHoover {
-	cursor:pointer;
 }
 
 table.adminTable td, table.adminTable th {
@@ -19,7 +20,8 @@ table.adminTable tbody td {
   font-size: 13px;
 }
 table.adminTable tr:nth-child(even) {
-  background: #D0E4F5;
+  background: #686de0;
+  color: white;
 }
 table.adminTable thead {
   background: #1C6EA4;
@@ -56,4 +58,8 @@ table.adminTable tfoot .links a{
   color: #FFFFFF;
   padding: 2px 8px;
   border-radius: 5px;
+}
+
+td {
+  width: 150px;
 }
