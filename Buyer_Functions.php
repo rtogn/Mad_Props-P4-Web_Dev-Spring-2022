@@ -1,5 +1,6 @@
-<?php
+<script type="text/javascript" src="./buyer_function.js"></script>
 
+<?php
 	include_once('SQL_Functions.php');
 
 	function searchProperties($search) {
@@ -50,19 +51,21 @@
 		// This function is maddness
 		// I wanted a generic way to print a SQL select query to a HTML table
 		// The problem arises when you need to print the headers as fetch_assoc only runs through once without being reset.
-		
+		$counter = 0;
 		$conn = getConn();
-		$result = $conn->query($sql);	
+		$result = $conn->query($sql);
 			
 		if ($result->num_rows > 0) {
 			// output data of each row
 			//  Run a loop and display the records on screen dynamically
 			// lets say the above query returned 20 rows
-			// Now display the table on screen with 20 records 
+			// Now display the table on screen with 20 records
+			
 			while($row = $result->fetch_assoc()) {
 				echo "\n\t<a href=\"property.php?id=".$row['id']."\" class=\"main\">\n";
 				echo "\t\t<div class='card'>\n";
-					echo "\t\t\t<img src='./images/AddProperty.jpg'>\n";;
+				$counter++;
+					echoImage($counter);
 					echo "\t\t\t<div class='contain'>\n";
 						echo "\t\t\t<ul>\n";
 							echo "\t\t\t\t<li>". $row["title"] . "</li>\n";
@@ -234,5 +237,67 @@
 			echo "None found";
 		}
 		$conn->close();
-	}	
+	}
+
+	function echoImage($counter) {
+		if($counter == 1) {
+			echo "\t\t\t<img src='./images/Houses/house1.jpeg'>\n";
+		}
+
+		if($counter == 2) {
+			echo "\t\t\t<img src='./images/Houses/house2.jpeg'>\n";
+		}
+
+		if($counter == 3) {
+			echo "\t\t\t<img src='./images/Houses/house3.jpeg'>\n";
+		}
+
+		if($counter == 4) {
+			echo "\t\t\t<img src='./images/Houses/house4.jpeg'>\n";
+		}
+
+		if($counter == 5) {
+			echo "\t\t\t<img src='./images/Houses/house5.jpeg'>\n";
+		}
+
+		if($counter == 6) {
+			echo "\t\t\t<img src='./images/Houses/house6.jpeg'>\n";
+		}
+
+		if($counter == 7) {
+			echo "\t\t\t<img src='./images/Houses/house7.jpeg'>\n";
+		}
+
+		if($counter == 8) {
+			echo "\t\t\t<img src='./images/Houses/house8.jpeg'>\n";
+		}
+
+		if($counter == 9) {
+			echo "\t\t\t<img src='./images/Houses/house9.jpeg'>\n";
+		}
+
+		if($counter == 10) {
+			echo "\t\t\t<img src='./images/Houses/house10.jpeg'>\n";
+		}
+
+		if($counter == 10) {
+			echo "\t\t\t<img src='./images/Houses/house11.jpeg'>\n";
+		}
+
+		if($counter == 10) {
+			echo "\t\t\t<img src='./images/Houses/house12.jpeg'>\n";
+		}
+
+		if($counter == 10) {
+			echo "\t\t\t<img src='./images/Houses/house13.jpeg'>\n";
+		}
+
+		if($counter == 10) {
+			echo "\t\t\t<img src='./images/Houses/house14.jpeg'>\n";
+		}
+
+		if($counter == 10) {
+			echo "\t\t\t<img src='./images/Houses/house15.jpeg'>\n";
+		}
+	}
 ?>
