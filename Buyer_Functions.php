@@ -1,3 +1,7 @@
+<script type="text/javascript" src="./buyer_function.js"></script>
+<style>
+<?php include './card.css'; ?>
+</style>
 <?php
 	include_once('SQL_Functions.php');
 
@@ -32,7 +36,6 @@
 				ORDER BY value DESC 
 				;"	;
 	
-					
 		displayPropCards($sql);
 	}
 	
@@ -58,7 +61,6 @@
 			//  Run a loop and display the records on screen dynamically
 			// lets say the above query returned 20 rows
 			// Now display the table on screen with 20 records
-			
 			while($row = $result->fetch_assoc()) {
 				echo "\n\t<a href=\"property.php?id=".$row['id']."\" class=\"main\">\n";
 				echo "\t\t<div class='card'>\n";
