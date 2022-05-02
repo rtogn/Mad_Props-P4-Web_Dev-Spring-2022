@@ -10,12 +10,20 @@
 			ini_set('display_startup_errors', 1);
 			error_reporting(E_ALL);
 			
+			include_once("SQL_Functions.php");
+			
 			$propId = -1;
 			if(isset($_GET['id'])) {
 				$propId = $_GET['id'];
 			}
 			
-			include_once("SQL_Functions.php");
+			if(isset($_POST['wishlist'])) {
+				echo "Added to wishlist!";
+				include_once("Buyer_Functions.php");
+				updateWishlist($propId);
+			}
+			
+			
 			$conn = getConn();
     
             
@@ -67,8 +75,13 @@
 			$conn->close();
 		
 			if($_SESSION['usrType'] == 'buyer') {
-				echo "<a href='buyer.php'><input type='button' id='btn2' value='Return To Buyer Dashboard'></a>\n";
+				echo "<form action='' method='post'>\n";
+				echo "<input type='submit' name='wishlist' id='wishlist' value='Add To Wishlist'>\n";
+				echo "<a href='buyer.php'><input type='button' id='btn2' value='Return To Buyer Dashboard'></a>\n</form>";
 			}
+			else if ($_SESSION['usrType'] == 'admin') {
+					echo "<a href='admin.php'><input type='button' id='btn2' value='Return To Admin Dashboard'></a>\n";	
+			}			
 			else {
 				echo "<a href='seller.php'><input type='button' id='btn2' value='Return To Seller Dashboard'></a>\n";	
 			}

@@ -102,4 +102,137 @@
 		$conn->close();
 	}
 	
+	function updateWishlist($propId) {
+		$usrId = $_SESSION['userId'];
+		$conn = getConn();
+		$sql = "UPDATE USERS
+				SET
+					wishList = concat(wishList, ';$propId')
+				WHERE
+					id = '$usrId'
+					AND INSTR(wishList, ';$propId') = 0
+				;";
+		echo $sql;	
+		if ($conn->query($sql) === TRUE) {
+			"Success";
+		} else {
+			echo "Error: Failed to update database";
+		}
+		$conn->close();
+	}
+	
+	function getWishList() {
+		$userId = $_SESSION['userId'];
+		$conn = getConn();
+		$sql = "SELECT
+					wishList
+				FROM 
+					USERS
+				WHERE
+					id = '$userId'
+				;";
+
+		// Get the Q results
+		$result = $conn->query($sql);
+		// Get row into a parsable format. Due to the way the table is designed there will only be one row
+		// This is because username is set to unique. 
+		$row = $result->fetch_array();
+		$wishValues = explode(";", $row['wishList']);
+		
+		//$wishValues = $row['wishList'];
+		
+		$conn->close();
+		return $wishValues;
+	}
+
+	function displayWishList($wishList) {
+		include_once('Admin_Functions.php');
+		if (sizeof($wishList) > 0) {
+
+							//start table
+			
+			echo "\n<table class='adminTable'>\n\t<tr id='admin_headerRow'>";	
+			echo "<tr><th colspan='8'>Your wish list: <th></tr>";
+			foreach($wishList as $location){
+				$sql = "SELECT
+							id,
+							title, 
+							address1,
+							address2,
+							city,
+							state,
+							zip,
+							value
+						FROM 
+							PROPERTIES
+						WHERE
+							id = $location
+						;";
+				if ($location > 0) {		
+
+					displayQueryList2($sql); 
+					
+				}
+			}
+			echo "\n</table>";
+		}
+	}
+	
+	function displayQueryList2($sql) {
+		// This function is maddness
+		// I wanted a generic way to print a SQL select query to a HTML table
+		// The problem arises when you need to print the headers as fetch_assoc only runs through once without being reset.
+		
+		$conn = getConn();
+		$result = $conn->query($sql);	
+		
+		
+		// set up data arrays for headers and actual data
+		$titles = array();
+		$values = array();
+		// Get headers and print as tr row
+		
+		if ($result->num_rows > 0) {
+			while($row = $result->fetch_assoc()) {
+				$colCount = sizeof($row);
+				foreach($row as $header=>$value) {
+					array_push($titles, $header);
+					array_push($values, $value);
+				}
+			}	
+		
+
+			// Titles ends up with copies of the headers for each 'row' of data
+			$titles = array_chunk($titles,$colCount)[0];
+			// Convert single dim data array to multi dimensional for each row we need
+			$values = array_chunk($values, $colCount);
+			
+			/*
+			//Print out headers once and close the tr
+			foreach($titles as $header) {
+				echo "\n\t\t<th id='admin_headerCol'>".$header."</th>";
+			}
+			echo "\n\t<tr>";
+			*/
+			// Print out all the data per row. 
+			foreach($values as $row) {
+				
+				echo "\n\t<tr id='admin_dataRow' onclick=\"window.location='property.php?id=".$row[0]."'\">";
+				foreach($row as $item) {
+					//echo "\n\t<a href=\"property.php?id=".$row[0]."\" class=\"main\">\n";
+					echo "\n\t\t<td id='admin_dataRow'>".$item."</td>";
+					//echo "\t</a>\n";
+				}
+				echo "\n\t</tr>";
+				
+			}
+				
+			// Close table. 
+			
+		}
+		else {
+			echo "None found";
+		}
+		$conn->close();
+	}	
 ?>

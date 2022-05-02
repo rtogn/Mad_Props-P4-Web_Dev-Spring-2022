@@ -65,8 +65,6 @@ function addUser() {
 					.$_POST['email']."');";
 	}
 	
-	echo $userEntry;
-	
 	$_SESSION['username'] = $_POST['username'];
 	
 	if($conn->query($usrEntry) === TRUE) {
@@ -218,6 +216,5 @@ function addProperty() {
 		$conn->close();
 	}
 	
-
 }
 ?>

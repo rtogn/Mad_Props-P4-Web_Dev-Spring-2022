@@ -6,6 +6,11 @@ table.adminTable {
   border-collapse: collapse;
   
 }
+
+.tableHoover {
+	cursor:pointer;
+}
+
 table.adminTable td, table.adminTable th {
   border: 1px solid #AAAAAA;
   padding: 3px 2px;

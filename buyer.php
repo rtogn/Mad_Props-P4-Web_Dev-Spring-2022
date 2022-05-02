@@ -16,6 +16,7 @@
   <meta charset="UTF-8">
   <title>Buyer List</title>
   <link rel="stylesheet" href="card.css">
+  <link rel="stylesheet" href="admin.css">
 </head>
 <body>
 	<?php
@@ -29,6 +30,10 @@
 			$_SESSION['newVisitor'] = 1;
 			setVisitorStatus();
 		}
+		$wishList = getWishList();
+		echo "<div class='tableHoover'>";
+		displayWishList($wishList);
+		echo"</div>";
 	?>
 	<h1>Properties to Buy</h1>	
 

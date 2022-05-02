@@ -35,8 +35,9 @@
 				email VARCHAR(45),				
 				creditCard INT(20),
 				creditType VARCHAR(20),
-				creditSecurity INT(4)
-				newVisitor BIT(1)
+				creditSecurity INT(4),
+				wishList VARCHAR(100),
+				newVisitor BIT(1) NOT NULL
 			);";
 			
 			

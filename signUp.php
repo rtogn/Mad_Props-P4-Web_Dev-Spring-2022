@@ -11,18 +11,6 @@ session_start();
 if (isset($_POST['firstName']) && strlen($_POST['firstName']) > 0) {  
 	addUser();
 }
-
-/*
-if (isset($_SESSION['user'])) {
-
-    if (empty($_SESSION['user'])) {
-        echo "<h2 class='error'> No Username! </h2>";
-    } else {
-        header("Location:index.html");
-    }
-}
-*/
-
 ?>
 
 <!DOCTYPE html>  

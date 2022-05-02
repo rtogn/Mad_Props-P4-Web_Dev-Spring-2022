@@ -40,11 +40,15 @@
 			
 			// Print out all the data per row. 
 			foreach($values as $row) {
-				echo "\n\t<tr id='admin_dataRow'>";
+				
+				echo "\n\t<tr id='admin_dataRow' onclick=\"window.location='property.php?id=".$row[0]."'\">";
 				foreach($row as $item) {
+					//echo "\n\t<a href=\"property.php?id=".$row[0]."\" class=\"main\">\n";
 					echo "\n\t\t<td id='admin_dataRow'>".$item."</td>";
+					//echo "\t</a>\n";
 				}
 				echo "\n\t</tr>";
+				
 			}
 				
 			// Close table. 
