@@ -65,8 +65,14 @@
 				echo "\t\t</ul>\n";		
 			}
 			$conn->close();
-
+		
+			if($_SESSION['usrType'] == 'buyer') {
+				echo "<a href='buyer.php'><input type='button' id='btn2' value='Return To Buyer Dashboard'></a>\n";
+			}
+			else {
+				echo "<a href='seller.php'><input type='button' id='btn2' value='Return To Seller Dashboard'></a>\n";	
+			}
 		?>
-		<a href="seller.php"><input type="button" id="btn2" value="Return To Seller Dashboard"></a>
+		
     </body>
 </html>

@@ -19,15 +19,7 @@
 </head>
 <body>
 
-  <h1>Properties to Buy</h1>
-  <ul class="fullclick">
-    <li>
-    <?php
-    //Code to pull user properties from database
-    //If properties are 0, display no filled cards
-    ?>
-	
-	
+  <h1>Properties to Buy</h1>	
 	
 	<div class="searchBar">
 		<form action="" method="post">
@@ -36,22 +28,28 @@
 		</form>
 	</div>
     
-	<?php
-		if (isset($_POST["search"]) && strlen($_POST["search"]) > 0) {
-			searchProperties($_POST["search"]);
-		}
-		
-	?>
+	
+	<div class="cardBox">
+		<?php
+			if (isset($_POST["search"]) && strlen($_POST["search"]) > 0) {
+				searchProperties($_POST["search"]);
+			}
+			
+		?>
+	</div>
 	
 	
 	<br>
-    <a href="addProperty.php" class="">
+	
+    <!--
+	<a href="addProperty.php" class="">
     <div class="card">
       <img src="./images/AddProperty.jpg">
       <div class="contain">
         <h4>Add Property</h4>
     </div>
     </a>
-  </ul>
+	-->
+
 </body>
 </html>
