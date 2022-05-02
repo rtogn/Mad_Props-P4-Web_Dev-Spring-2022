@@ -1,4 +1,16 @@
 <!DOCTYPE html>
+
+<?php
+	ini_set('display_errors', 1);
+	ini_set('display_startup_errors', 1);
+	error_reporting(E_ALL);
+	include_once("SQL_Functions.php");
+	include_once("Buyer_Functions.php");
+	//start session
+	session_start();
+	
+ ?>
+ 
 <html lang="en">
 <head>
   <meta charset="UTF-8">
@@ -14,7 +26,25 @@
     //Code to pull user properties from database
     //If properties are 0, display no filled cards
     ?>
+	
+	
+	
+	<div class="searchBar">
+		<form action="" method="post">
+			<input name="search" type="text" placeholder="Type a zip code or city here">
+			<input class="searchButton" type="submit" value="SUBMIT">
+		</form>
+	</div>
     
+	<?php
+		if (isset($_POST["search"]) && strlen($_POST["search"]) > 0) {
+			//searchProperties($_POST["search"]);
+		}
+		searchForZip("30338");
+	?>
+	
+	
+	<br>
     <a href="addProperty.php" class="">
     <div class="card">
       <img src="./images/AddProperty.jpg">

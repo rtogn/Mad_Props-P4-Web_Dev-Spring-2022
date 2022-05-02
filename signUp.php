@@ -9,10 +9,8 @@ session_start();
 
 // Checks if user has clicked login button and makes sure something is entered. 
 if (isset($_POST['firstName']) && strlen($_POST['firstName']) > 0) {  
-	$conn = getConn();
-
 	if ($conn) {
-		addUser($conn);
+		addUser();
 	} else {
 		echo "Could not establish connectoin to SQL server";
 	}	
@@ -47,7 +45,7 @@ if (isset($_SESSION['user'])) {
             <h1 class="login"> Sign Up </h1>			
 	
 			
-	<input name="firstName" type="text" placeholder="First Name" required>
+			<input name="firstName" type="text" placeholder="First Name" required>
             <input name="lastName" type="text" placeholder="Last Name" required>
             <input name="email" type="text" placeholder="Email" required>
             <input name="username" type="text" placeholder="Username" required>

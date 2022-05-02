@@ -16,7 +16,7 @@
 			error_reporting(E_ALL);	
 		//Code to pull user properties from database
 		//If properties are 0, display no filled card
-		include("Admin_Functions.php");
+		include_once("Admin_Functions.php");
 	 ?>	
 		<table class='adminTable'>
 			<tr>

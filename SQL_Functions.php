@@ -3,12 +3,7 @@
 session_start();
 
 			
-function SQLBitToYesNo($value) {
-	// Returns Yes Or No String based on bit value. 
-		if ($value == 1)
-			return "Yes";
-		return "No";	
-}
+
 
 function moneyFormat($value) {
 	//Convert SQL DECIMAL to formatted dollar value string with commas and decimal.
@@ -122,7 +117,7 @@ function verifyUser($username, $password) {
 }
 
 function selectDashboard($userType) {
-	if ($userType == "Admin") {
+	if ($userType == "admin") {
 		header("Location: admin.php"); 
 	}
 	else if ($userType == "seller") {

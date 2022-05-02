@@ -36,6 +36,7 @@
 				creditCard INT(20),
 				creditType VARCHAR(20),
 				creditSecurity INT(4)
+				newVisitor BIT(1)
 			);";
 			
 			
@@ -64,6 +65,25 @@
 				buyerID INT(6) UNSIGNED					
 			);";
 			
+			
+			$addAdmin = "INSERT INTO USERS(
+							username,
+							usrType,
+							password,
+							firstName,
+							lastName,
+							email
+						)
+						values(
+							'admin',
+							'admin',
+							'admin',
+							'MPadminF',
+							'MPadminL',
+							'MPadmin@madpropsgsu.com'
+						)
+						
+						;";
 			
 			$testEntry = "INSERT INTO
 							  PROPERTIES (
@@ -101,12 +121,12 @@
 							  );";
 			
 			// Set the query variable here for what you want to do -Belogus
-			if($conn->query($propTable) === TRUE) {
+			if($conn->query($userTable) === TRUE) {
 				echo "User table created!";
 			} else {
 				"Error with creating table: " . $conn->error;
 			}
-			if($conn->query($testEntry) === TRUE) {
+			if($conn->query($addAdmin) === TRUE) {
 				echo "User row created!";
 			} else {
 				"Error with creating table: " . $conn->error;
