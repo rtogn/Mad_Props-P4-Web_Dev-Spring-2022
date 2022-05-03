@@ -2,7 +2,6 @@
 <?php
 session_start();
 
-
 function getConn() {
 	// Return conn object based on login info below. 
 	$host = "localhost";
@@ -139,7 +138,6 @@ function selectDashboard($userType) {
 function addProperty() {
 	// Takes info from _POST and adds it to the PROPERTIES table.
 	// Called from the addProperty.php page.
-	print_r($_SESSION);
 	if ($_SESSION["userId"] == NULL) {
 		alert("Error no user ID!");
 	} else {

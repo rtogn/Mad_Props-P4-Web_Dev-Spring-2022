@@ -11,14 +11,7 @@
   <h1>Properties to Sell</h1>
   <ul class="fullclick">
   <?php
-
 		session_start();
-		
-	
-		ini_set('display_errors', 1);
-		ini_set('display_startup_errors', 1);
-		error_reporting(E_ALL);
-			
 		include_once("SQL_Functions.php");
 		$conn = getConn();
 	   
@@ -40,7 +33,8 @@
 			// lets say the above query returned 20 rows
 			// Now display the table on screen with 20 records 
 			while($row = $result->fetch_assoc()) {
-
+				echo "\t\t<div class='card'>\n";
+				echo "\t\t\t<div class='contain'>\n";
 				echo "<li><p>" . $row["title"] . "</p><p>" . $row["address1"] . "</p><p>" . moneyFormat($row['value']). "</p>\n";
 				echo "<form class=\"main\">\n";
 				echo "</form>\n";
@@ -49,6 +43,7 @@
 				
 				
 				echo "</li>\n";	
+				echo "</div></div>";
 				//echo "<button onclick=\"gotoPropPage(".$row['id'].")\">Beep</button>";				
 			}
 		}

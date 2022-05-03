@@ -21,9 +21,6 @@
 		<h1 class="aboutUs">Admin Dashboard</h1>
 
 <?php
-		ini_set('display_errors', 1);
-		ini_set('display_startup_errors', 1);
-		error_reporting(E_ALL);	
 	//Code to pull user properties from database
 	//If properties are 0, display no filled card
 	include_once("Admin_Functions.php");
