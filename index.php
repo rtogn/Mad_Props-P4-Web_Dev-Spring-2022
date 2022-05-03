@@ -28,7 +28,7 @@
     <body>
         <form class="loginBox" action="" method="post">
             <div class="houseLogo">
-                <img src="./images/houseLogo.png">
+                <a href="homePage.html"><img src="./images/houseLogo.png"></a>
             </div>
             <h1 class="login"> Login </h1>
             <input name="username" type="text" placeholder="Username" id="username" required>
