@@ -21,8 +21,8 @@
 			<p>Address 1: <input name="address1" type="text" maxlength="30" required></p>
 			<p>Address 2: <input name="address2" type="text" maxlength="30"></p>
 			<p>City: <input name="city" type="text" maxlength="25" required></p>
-			<p>State: <input name="city" type="text" maxlength="2" required></p>
-			<p>Zip: <input name="city" type="text" maxlength="5" required></p>
+			<p>State: <input name="state" type="text" maxlength="2" required></p>
+			<p>Zip: <input name="zip" type="text" maxlength="5" required></p>
 			<p>Construction Date: <input name="date" type="date"></p>
 			<p>Square Footage: <input name="size" type="number" max="4294967295" required></p>
 			<p>Number of Bedrooms: <input name="bedrooms" type="number" required></p>
