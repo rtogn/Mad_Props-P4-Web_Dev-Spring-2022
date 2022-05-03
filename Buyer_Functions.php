@@ -98,7 +98,6 @@
 					id = '$usrId'
 				;";
 				
-		echo $sql;
 		if (!$conn->query($sql) === TRUE) {
 			echo "Error: Failed to update database";
 		}
@@ -114,8 +113,7 @@
 				WHERE
 					id = '$usrId'
 					AND INSTR(wishList, ';$propId') = 0
-				;";
-		echo $sql;	
+				;";	
 		if ($conn->query($sql) === TRUE) {
 			"Success";
 		} else {
