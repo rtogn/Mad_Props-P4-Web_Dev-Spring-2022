@@ -2,23 +2,23 @@
 
 # "Mad Props": Project 4, Web Development @ GSU Spring 2022 
 
-This project was implemented based on requirements provided. Originally it was deployed on GSUs CODD server. 
+This project was implemented based on requirements provided by the professor and the prompt below. Essentially, the purpose was to implement a mock site for buying and listing homes including user login and admin functionalities. Originally it was deployed on GSUs CODD server. 
 >> Objective:  
 Let’s assume you have a startup idea for a company, your desires are to bring the property 
 buyer and property sellers under a single platform. Please use a creative name for your 
-company, for example I would call my company (PropertTy-Hub) be creative and have a 
+company, for example I would call my company (Property-Hub) be creative and have a 
 spinoff name similar to what I have.
 
 # Languages Used
 * PHP
 * HTML
 * CSS
-* Javascript
+* JavaScript
 
 # Features
 
 * User login
-* User wishlist 
+* User Wishlist 
 * Admin dashboard with metrics on sales and listings
 
 # Screenshots
