@@ -1,6 +1,6 @@
 ![image](https://user-images.githubusercontent.com/60898339/235792883-0cb19c40-9ade-4885-b64d-9a055195b256.png)
 
-# "Mad Props": Project 4, Web Devvelopment @ GSU Spring 2022 
+# "Mad Props": Project 4, Web Development @ GSU Spring 2022 
 
 This project was implemented based on requirements provided. Originally it was deployed on GSUs CODD server. 
 >> Objective:  
